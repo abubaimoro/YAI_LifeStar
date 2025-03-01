@@ -292,7 +292,7 @@ nav h2 {
   outline: none;
 }
 
-textarea {
+.form-group textarea {
   resize: none;
 } 
 
