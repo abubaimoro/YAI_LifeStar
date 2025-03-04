@@ -87,3 +87,5 @@ document.querySelectorAll(".service-card").forEach((card) => {
     this.style.transition = "transform 0.3s ease, box-shadow 0.3s ease";
   });
 });
+
+
