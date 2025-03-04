@@ -93,6 +93,10 @@ nav h2 {
   color: white;
   text-align: center;
   padding: 150px 20px;
+  height: 100vh; /* Full screen height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hero-contain {
