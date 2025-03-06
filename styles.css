@@ -277,40 +277,105 @@ nav h2 {
   line-height: 1.6;
 }
 
-.media-container {
-  display: flex;
-  gap: 2rem;
-  margin-top: 3rem;
+/* Product Section Styles */
+
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.media-item {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
 }
 
-.video-container {
+.products-section {
   width: 100%;
-  position: relative;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  background-color: #f9f9f9;
+  padding: 2rem 0;
 }
 
-.video-container video {
-  position: absolute;
-  top: 0;
-  left: 0;
+.products-section > * {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.products-section h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.description {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  max-width: 800px;
+  color: #555;
+}
+
+/* Grid layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.grid-item {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  aspect-ratio: 1 / 1;
+}
+
+/* Media content styling */
+.media-wrapper {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  position: relative;
+  overflow: hidden;
 }
 
-.media-item img {
+.media-content {
   width: 100%;
-  height: auto;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  height: 100%;
   object-fit: cover;
-  aspect-ratio: 16 / 9;
+  display: block;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 992px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .products-section > * {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .description {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
 }
 
 /* Responsive Design */
@@ -378,7 +443,7 @@ video {
   font-size: 2.2rem;
 }
 
-contact-subtitle {
+.contact-subtitle {
   text-align: center;
   margin-bottom: 50px;
   color: #666;
