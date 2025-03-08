@@ -3,7 +3,8 @@ const mobileToggle = document.getElementById("mobileToggle");
 const navItems = document.getElementById("navItems");
 
 mobileToggle.addEventListener("click", () => {
-  navItems.classList.toggle("active");
+  navItems.classList.toggle("show");
+  mobileToggle.classList.toggle("active");
 });
 
 // Close mobile menu when clicking on a nav link
@@ -87,5 +88,3 @@ document.querySelectorAll(".service-card").forEach((card) => {
     this.style.transition = "transform 0.3s ease, box-shadow 0.3s ease";
   });
 });
-
-

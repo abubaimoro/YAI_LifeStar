@@ -56,7 +56,7 @@ nav h2 {
 
 .navitems {
   display: flex;
-  gap: 30px;
+  gap: 2rem;
 }
 
 .navitems a {
@@ -366,12 +366,12 @@ body {
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  
+
   h2 {
     font-size: 1.5rem;
     margin-bottom: 0.75rem;
   }
-  
+
   .description {
     font-size: 1rem;
     margin-bottom: 1.5rem;
@@ -675,41 +675,39 @@ video {
 /* Mobile Menu */
 .mobile-toggle {
   display: none;
-  font-size: 24px;
   background: none;
   border: none;
-  color: #333;
+  font-size: 1.5rem;
   cursor: pointer;
+  padding: 0.5rem;
 }
 
-/* Media Queries */
+/* Mobile responsive styles */
 @media (max-width: 768px) {
   .mobile-toggle {
     display: block;
   }
 
   .navitems {
+    display: none;
     position: absolute;
-    top: 70px;
+    top: 100%;
     left: 0;
     right: 0;
-    background-color: white;
+    background: #fff;
     flex-direction: column;
-    gap: 0;
-    height: 0;
-    overflow: hidden;
-    transition: height 0.3s ease;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
 
-  .navitems.active {
-    height: 200px;
+  .navitems.show {
+    display: flex;
   }
 
   .navitems a {
-    display: block;
-    padding: 15px 20px;
-    border-bottom: 1px solid #eee;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    text-align: center;
   }
 
   .hero-title {
