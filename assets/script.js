@@ -8,8 +8,8 @@ mobileToggle.addEventListener("click", () => {
 });
 
 // Close mobile menu when clicking on a nav link
-const navLinks = document.querySelectorAll(".navitems a");
-navLinks.forEach((link) => {
+const navLink = document.querySelectorAll(".navitems a");
+navLink.forEach((link) => {
   link.addEventListener("click", () => {
     navItems.classList.remove("active");
   });
@@ -87,4 +87,40 @@ document.querySelectorAll(".service-card").forEach((card) => {
   card.addEventListener("mouseleave", function () {
     this.style.transition = "transform 0.3s ease, box-shadow 0.3s ease";
   });
+});
+
+// Active nav links implementation
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".navitems a");
+
+// Observer options
+const observerOptions = {
+  threshold: 0.5, // Trigger when 50% of the section is visible
+  rootMargin: "-50px 0px", // Offset trigger point slightly to account for nav height
+};
+
+// Create intersection observer
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      // Get the id of the visible section
+      const id = entry.target.getAttribute("id");
+      // Remove active class from all links
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+      });
+      // Add active class to corresponding nav link
+      const correspondingLink = document.querySelector(
+        `.navitems a[href="#${id}"]`
+      );
+      if (correspondingLink) {
+        correspondingLink.classList.add("active");
+      }
+    }
+  });
+}, observerOptions);
+
+// Observe all sections
+sections.forEach((section) => {
+  observer.observe(section);
 });
