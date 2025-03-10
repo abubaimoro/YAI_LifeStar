@@ -266,10 +266,11 @@ nav h2 {
   transition: color 0.3s ease;
 }
 
-.mission-block .mission-icon i {
+.mission-icon {
   color: #2ecc71;
-  font-size: 1.5rem;
-  transition: color 0.3s ease;
+}
+.mission-icon i:hover {
+  color: white;
 }
 
 /* Hover effects */
@@ -280,7 +281,7 @@ nav h2 {
 
 .mission-block:hover h4,
 .mission-block:hover p,
-.mission-block:hover .mission-icon i {
+.mission-block:hover .mission-icon  {
   color: white;
 }
 
