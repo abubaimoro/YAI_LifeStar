@@ -56,6 +56,41 @@ window.addEventListener("scroll", () => {
   });
 });
 
+// Animation on Scroll
+document.addEventListener("DOMContentLoaded", () => {
+  const aboutSection = document.querySelector(".about-section");
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          aboutSection.classList.add("fade-in");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  observer.observe(aboutSection);
+});
+
+// Add CSS for fade-in effect
+const style = document.createElement("style");
+style.innerHTML = `
+  .about-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .about-section.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+document.head.appendChild(style);
+
+
+
 // Form behaviour manipulation
 document.getElementById("contactForm").addEventListener("submit", function (e) {
   e.preventDefault();
